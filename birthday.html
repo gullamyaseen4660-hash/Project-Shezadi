@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ur">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Shehzadi ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/icons/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+    <button type="button" id="musicBtn" onclick="toggleMusic()">
+        🎵 Play Music
+    </button>
+
+   <!-- Welcome Screen -->
+
+<div id="welcomeScreen">
+
+    <div class="floatingHearts"></div>
+    <div class="floatingStars"></div>
+    <div class="floatingFlowers"></div>
+
+    <div class="welcomeCard">
+
+       <img src="images/welcome/cat.gif"
+     class="welcomeBear"
+     alt="Cute Cat">
+
+        <h1>Happy Birthday</h1>
+
+        <h2>Mohtrma</h2>
+
+        <p>
+            Ak chota sa surprise meri jaan ke liye...
+        </p>
+
+        <button type="button" onclick="startSurprise()">
+            🎁 Start The Surprise
+        </button>
+
+    </div>
+
+</div>
+
+    <!-- Effects -->
+    <div id="hearts"></div>
+    <div id="stars"></div>
+    <div id="confetti"></div>
+    <div id="sparkles"></div>
+    <div id="fireworks"></div>
+    <div id="petals"></div>
+    
+
+   <!-- Luxury Header -->
+
+<div class="luxuryHeader">
+
+
+  <div class="birthdayTitle">
+
+    <div class="crown">👑</div>
+
+    <div class="butterfly leftButterfly">🦋</div>
+    <div class="butterfly rightButterfly">🦋</div>
+
+    <div class="happyText">
+        Happy 
+    </div>
+
+    <div class="birthdayText">
+        Birthday
+    </div>
+
+    <div class="heartDecoration">
+        <span>♡</span>
+        <div class="goldLine"></div>
+        <span class="mainHeart">♥</span>
+        <div class="goldLine"></div>
+        <span>♡</span>
+    </div>
+
+</div>
+
+<div class="introCard">
+
+    <p>
+        Ye meri zindagi ki pehli website hai.<br>
+        Aur ye sirf meri Shehzadi ke liye banai hai. 🌹
+    </p>
+
+</div>
+
+<button class="luxuryBtn" type="button" onclick="showMessage()">
+    Click Now ♡
+</button>
+
+<button
+id="continueBtn"
+class="luxuryBtn"
+type="button"
+onclick="showFinalMessage()"
+style="display:none;">
+
+Continue ❤️
+
+</button>
+
+<!-- Final Message -->
+<div id="message">
+
+   <h2>My Beautiful Shehzadi ❤️</h2>
+
+    <p>
+        Allah pak aap ki zindagi khushiyon se bhar de.<br><br>
+
+        Happy Birthday Zargull Rani! 🎂❤️
+    </p>
+
+</div>
+
+<button
+id="cakeBtn"
+class="luxuryBtn"
+type="button"
+onclick="showCake()"
+style="display:none;">
+
+🎂 Cut Birthday Cake
+
+</button>
+
+<!-- ================= Cake Section ================= -->
+
+<section id="cake-section" class="section">
+
+    <h2>🎂 Birthday Cake 🎂</h2>
+
+    <p id="cakeText">
+        Tap the knife to cut your birthday cake ❤️
+    </p>
+
+    <div class="cakeContainer">
+
+        <!-- Cake -->
+
+        <img
+            id="cake"
+            src="images/cake/cake.png"
+            alt="Birthday Cake">
+
+        <!-- Knife -->
+
+        <img
+            id="knife"
+            src="images/cake/knife.png"
+            alt="Knife"
+            onclick="cutCake()">
+
+    </div>
+
+</section>
+    <!-- Gift -->
+    <div id="gift-section">
+
+        <h2>Special Gift For My Shehzadi 🎁</h2>
+
+        <div id="gift" onclick="openGift()">
+            🎁
+        </div>
+
+        <p id="giftText">
+            Apna Birthday Gift kholne ke liye Gift par click karein ❤️
+        </p>
+
+    </div>
+
+    <!-- Letter -->
+    <div id="letterSection">
+
+        <h2>Letter For My Shehzadi 💌</h2>
+
+        <p id="typingText"></p>
+
+       <button class="luxuryBtn" onclick="startLetter()">
+Open My Letter ❤️
+</button>
+
+    </div>
+
+    <!-- Gallery -->
+    <div id="gallery">
+
+       <h2>Our Beautiful Memories ❤️</h2>
+
+     <img
+    id="photo"
+    src="images/gallery/photo1.jpg"
+    alt="Photo"
+    loading="lazy"
+    width="300"
+    height="400">
+        <br><br>
+
+<button
+class="luxuryBtn"
+onclick="nextPhoto()">
+
+Next Memory ❤️
+
+</button>
+
+    </div>
+
+   
+<div id="finalSurprise">
+
+    <h1>💖 I Love You Zargull Rani 💖</h1>
+
+    <p id="finalText">
+        Ap meri zindagi ka sab se khoobsurat hisa ho. ❤️
+    </p>
+
+    <h2>🌹 Forever & Always 🌹</h2>
+<button type="button" id="proposalBtn" onclick="showProposal()" style="display:none;">
+    💍 One Last Surprise ❤️
+</button>
+<div id="proposalScreen">
+
+    <h1>💍 Will You Stay With Me Forever? 💍</h1>
+
+    <p>
+        Meri Pyari Shehzadi ❤️<br><br>
+        Kya ap hamesha meri zindagi ka hissa rahain gei?
+    </p>
+
+  <button class="luxuryBtn" onclick="acceptProposal()">
+    Yes, Forever ❤️
+</button>
+
+</div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

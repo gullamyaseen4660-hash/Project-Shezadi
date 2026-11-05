@@ -1,256 +1,216 @@
-<!DOCTYPE html>
-<html lang="ur">
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Shehzadi ❤️</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/icons/favicon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Secret Gate ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Georgia, serif;
+    color: white;
+    text-align: center;
+    background: linear-gradient(135deg, #18051f, #650b49, #160d32);
+}
+
+.card {
+    width: 100%;
+    max-width: 500px;
+    padding: 35px 22px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 25px;
+    background: rgba(255,255,255,.10);
+    box-shadow: 0 0 35px rgba(255,20,147,.25);
+}
+
+h1 {
+    color: #ffd6ed;
+    font-size: clamp(22px, 6vw, 38px);
+    white-space: nowrap;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 20, 147, .5);
+}
+
+.message {
+    color: #f8d8eb;
+    line-height: 1.7;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.time-box {
+    min-width: 65px;
+    padding: 14px 8px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.13);
+}
+
+.time-box span {
+    display: block;
+    font-size: 27px;
+    color: #ffd700;
+}
+
+.time-box small {
+    font-size: 11px;
+}
+
+input, button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+}
+
+input {
+    text-align: center;
+    background: white;
+    color: #333;
+}
+
+button {
+    background: linear-gradient(90deg, #ff1493, #a000b5);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#gate {
+    display: none;
+}
+
+#error {
+    color: #ffb4c8;
+    min-height: 24px;
+}
+
+</style>
 </head>
 
 <body>
 
-    <audio id="bgMusic" loop preload="auto">
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-</audio>
+<div class="card">
 
-    <button type="button" id="musicBtn" onclick="toggleMusic()">
-        🎵 Play Music
-    </button>
+    <h1>❤️ The Secret Gate ❤️</h1>
 
-   <!-- Welcome Screen -->
-
-<div id="welcomeScreen">
-
-    <div class="floatingHearts"></div>
-    <div class="floatingStars"></div>
-    <div class="floatingFlowers"></div>
-
-    <div class="welcomeCard">
-
-       <img src="images/welcome/cat.gif"
-     class="welcomeBear"
-     alt="Cute Cat">
-
-        <h1>Happy Birthday</h1>
-
-        <h2>Mohtrma</h2>
-
-        <p>
-            Ak chota sa surprise meri jaan ke liye...
-        </p>
-
-        <button type="button" onclick="startSurprise()">
-            🎁 Start The Surprise
-        </button>
-
-    </div>
-
-</div>
-
-    <!-- Effects -->
-    <div id="hearts"></div>
-    <div id="stars"></div>
-    <div id="confetti"></div>
-    <div id="sparkles"></div>
-    <div id="fireworks"></div>
-    <div id="petals"></div>
-    
-
-   <!-- Luxury Header -->
-
-<div class="luxuryHeader">
-
-
-  <div class="birthdayTitle">
-
-    <div class="crown">👑</div>
-
-    <div class="butterfly leftButterfly">🦋</div>
-    <div class="butterfly rightButterfly">🦋</div>
-
-    <div class="happyText">
-        Happy 
-    </div>
-
-    <div class="birthdayText">
-        Birthday
-    </div>
-
-    <div class="heartDecoration">
-        <span>♡</span>
-        <div class="goldLine"></div>
-        <span class="mainHeart">♥</span>
-        <div class="goldLine"></div>
-        <span>♡</span>
-    </div>
-
-</div>
-
-<div class="introCard">
-
-    <p>
-        Ye meri zindagi ki pehli website hai.<br>
-        Aur ye sirf meri Shehzadi ke liye banai hai. 🌹
+    <p class="message" id="message">
+        Something special is waiting for you.
+        <br>
+        Your little surprise will unlock soon...
     </p>
 
-</div>
-
-<button class="luxuryBtn" type="button" onclick="showMessage()">
-    Click Now ♡
-</button>
-
-<button
-id="continueBtn"
-class="luxuryBtn"
-type="button"
-onclick="showFinalMessage()"
-style="display:none;">
-
-Continue ❤️
-
-</button>
-
-<!-- Final Message -->
-<div id="message">
-
-   <h2>My Beautiful Shehzadi ❤️</h2>
-
-    <p>
-        Allah pak aap ki zindagi khushiyon se bhar de.<br><br>
-
-        Happy Birthday Zargull Rani! 🎂❤️
-    </p>
-
-</div>
-
-<button
-id="cakeBtn"
-class="luxuryBtn"
-type="button"
-onclick="showCake()"
-style="display:none;">
-
-🎂 Cut Birthday Cake
-
-</button>
-
-<!-- ================= Cake Section ================= -->
-
-<section id="cake-section" class="section">
-
-    <h2>🎂 Birthday Cake 🎂</h2>
-
-    <p id="cakeText">
-        Tap the knife to cut your birthday cake ❤️
-    </p>
-
-    <div class="cakeContainer">
-
-        <!-- Cake -->
-
-        <img
-            id="cake"
-            src="images/cake/cake.png"
-            alt="Birthday Cake">
-
-        <!-- Knife -->
-
-        <img
-            id="knife"
-            src="images/cake/knife.png"
-            alt="Knife"
-            onclick="cutCake()">
-
-    </div>
-
-</section>
-    <!-- Gift -->
-    <div id="gift-section">
-
-        <h2>Special Gift For My Shehzadi 🎁</h2>
-
-        <div id="gift" onclick="openGift()">
-            🎁
+    <div class="timer" id="timer">
+        <div class="time-box">
+            <span id="days">00</span>
+            <small>DAYS</small>
         </div>
 
-        <p id="giftText">
-            Apna Birthday Gift kholne ke liye Gift par click karein ❤️
-        </p>
+        <div class="time-box">
+            <span id="hours">00</span>
+            <small>HOURS</small>
+        </div>
 
+        <div class="time-box">
+            <span id="minutes">00</span>
+            <small>MINUTES</small>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">00</span>
+            <small>SECONDS</small>
+        </div>
     </div>
 
-    <!-- Letter -->
-    <div id="letterSection">
+    <div id="gate">
+        <h2>🔐 The Secret Gate</h2>
+        <p class="message">Enter your secret code to open your surprise ❤️</p>
 
-        <h2>Letter For My Shehzadi 💌</h2>
+        <input
+            type="password"
+            id="secretCode"
+            placeholder="Enter your secret code"
+        >
 
-        <p id="typingText"></p>
+        <button onclick="checkCode()">UNLOCK MY SURPRISE ❤️</button>
 
-       <button class="luxuryBtn" onclick="startLetter()">
-Open My Letter ❤️
-</button>
-
+        <p id="error"></p>
     </div>
-
-    <!-- Gallery -->
-    <div id="gallery">
-
-       <h2>Our Beautiful Memories ❤️</h2>
-
-     <img
-    id="photo"
-    src="images/gallery/photo1.jpg"
-    alt="Photo"
-    loading="lazy"
-    width="300"
-    height="400">
-        <br><br>
-
-<button
-class="luxuryBtn"
-onclick="nextPhoto()">
-
-Next Memory ❤️
-
-</button>
-
-    </div>
-
-   
-<div id="finalSurprise">
-
-    <h1>💖 I Love You Zargull Rani 💖</h1>
-
-    <p id="finalText">
-        Ap meri zindagi ka sab se khoobsurat hisa ho. ❤️
-    </p>
-
-    <h2>🌹 Forever & Always 🌹</h2>
-<button type="button" id="proposalBtn" onclick="showProposal()" style="display:none;">
-    💍 One Last Surprise ❤️
-</button>
-<div id="proposalScreen">
-
-    <h1>💍 Will You Stay With Me Forever? 💍</h1>
-
-    <p>
-        Meri Pyari Shehzadi ❤️<br><br>
-        Kya ap hamesha meri zindagi ka hissa rahain gei?
-    </p>
-
-  <button class="luxuryBtn" onclick="acceptProposal()">
-    Yes, Forever ❤️
-</button>
 
 </div>
-</div>
 
-    <script src="script.js"></script>
+<script>
+// Set the unlock date: 6 November 2026, 12:00 AM Pakistan time
+const unlockDate = new Date("2026-11-06T00:00:00+05:00");
+
+// Change this to your own secret code
+const SECRET_CODE = "HAPPY Z BIRTHDAY";
+
+// Your main website page
+const MAIN_WEBSITE = "birthday.html";
+
+function updateTimer() {
+    const now = Date.now();
+    const difference = unlockDate.getTime() - now;
+
+    if (difference <= 0) {
+        document.getElementById("timer").style.display = "none";
+        document.getElementById("message").textContent =
+            "The wait is over. Your surprise is ready! ❤️";
+        document.getElementById("gate").style.display = "block";
+        return;
+    }
+
+    document.getElementById("days").textContent =
+        Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    document.getElementById("hours").textContent =
+        Math.floor((difference / (1000 * 60 * 60)) % 24);
+
+    document.getElementById("minutes").textContent =
+        Math.floor((difference / (1000 * 60)) % 60);
+
+    document.getElementById("seconds").textContent =
+        Math.floor((difference / 1000) % 60);
+}
+
+function checkCode() {
+    const enteredCode = document.getElementById("secretCode").value;
+
+    if (Date.now() < unlockDate.getTime()) {
+        return;
+    }
+
+    if (enteredCode === SECRET_CODE) {
+        window.location.href = MAIN_WEBSITE;
+    } else {
+        document.getElementById("error").textContent =
+            "Wrong code! Try again ❤️";
+    }
+}
+
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
 
 </body>
-
 </html>
